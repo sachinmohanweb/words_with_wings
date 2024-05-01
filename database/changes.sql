@@ -1,0 +1,26 @@
+
+/*--------09/04/24---------*/
+
+CREATE TABLE `users` (
+	`id` INT NOT NULL AUTO_INCREMENT , 
+	`name` VARCHAR(256) NOT NULL , 
+	`email` VARCHAR(256) NOT NULL , 
+	`password` VARCHAR(256) NOT NULL , 
+	`remember_token` VARCHAR(100) NULL DEFAULT NULL , 
+	`created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , 
+	`updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`));
+
+/*--------09/04/24---------*/
+
+CREATE TABLE `poems` (
+	`id` INT NOT NULL AUTO_INCREMENT , 
+	`name` VARCHAR(256) NOT NULL , 
+	`category` VARCHAR(256) NOT NULL , 
+	`lyrics` TEXT NOT NULL , 
+	`status` INT NOT NULL DEFAULT '1' , 
+	`created_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , 
+	`updated_at` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP , PRIMARY KEY (`id`));
+
+ALTER TABLE `poems` ADD `image` VARCHAR(256) NULL DEFAULT NULL AFTER `lyrics`;
+
+ALTER TABLE `poems` ADD `deleted_at` TIMESTAMP NULL DEFAULT NULL AFTER `updated_at`;
