@@ -43,7 +43,7 @@ class UserController extends Controller
 
     public function AdminDashboard() : View
     {
-        return view('backend.Dashboard');
+        return view('backend.dashboard');
     }
 
     public function AdminLogout(Request $request): RedirectResponse
